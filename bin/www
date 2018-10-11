@@ -1,17 +1,20 @@
 #!/usr/bin/env node
 var fs = require('fs');
 var https = require('https');
-
+var path = require('path');
 var app = require('express')();
+var express = require('express');
 
 var options = {
     key : fs.readFileSync('bin/SSL/server.key'),
     cert : fs.readFileSync('bin/SSL/server.crt'),
 };
 
-app.get('/',function (req,res) {
-    res.send("hello");
-});
+// app.get('/',function (req,res) {
+//     res.sendFile('index.html',{root : path.join(__dirname,'../views')});
+// });
+
+app.use(express.static(path.join(__dirname, '../public')));
 
 
 
