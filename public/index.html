@@ -1,31 +1,88 @@
 <!DOCTYPE html>
-    <html lang="fr" ng-app="routeApp">
+<html lang="fr" ng-app="agrevidApp">
 
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Route App</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Agrévid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-        <script src="javascripts/RoutingAccueil.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.js"></script>
+    <script src="javascripts/AngularRouting.js"></script>
 
 
-
-
-
-    </head>
+</head>
 
 <body>
 
-<a ui-sref="accueil" ui-sref-active="active">Acceuil</a>
-<a ui-sref="inscription" ui-sref-active="active">Inscription</a>
+<!-- Menu navigation boutons + Routing AngularJS  -->
 
 
+<div class="btn-group">
+    <button type="button" class="btn btn-lg button-accueil" ui-sref-active="active" data-toggle="modal"
+            data-target="#login-modal">
+        Connexion
+    </button>
+    <button type="button" class="btn btn-lg button-accueil" ui-sref-active="active" data-toggle="modal"
+            data-target="#register-modal">
+        Inscription
+    </button>
+    <button type="button" class="btn btn-lg button-accueil" ui-sref="testRouting" ui-sref-active="active">
+        testRouting
+    </button>
+</div>
 
 
+<!-- Pop up Connexion form  -->
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <h4 class="logoStyle">Connectez-vous</h4><br>
+            <form>
+                <input type="text" name="user" placeholder="Votre email">
+                <input type="password" name="pass" placeholder="Mot de passe">
+                <input type="submit" name="login" class="btn btn-lg button-accueil" value="Se connecter">
+            </form>
+
+            <div class="login-help">
+                <p>Mot de passe oublié ?</p>
+                <a href="#">Envoyer un mot de passe temporaire à votre boite mail</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pop up Inscription form  -->
+
+<div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <h4 class="logoStyle">Inscription</h4><br>
+            <form>
+                <input type="text" name="nom" placeholder="Votre nom">
+                <input type="text" name="user" placeholder="Votre email">
+                <input type="text" name="user" placeholder="Confirmez votre email">
+                <input type="password" name="pass" placeholder="Mot de passe">
+                <input type="password" name="pass" placeholder="Confirmez votre mot de passe">
+
+                <input type="submit" name="subscribe" class="btn btn-lg button-accueil" value="Créer votre compte">
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<br/>
+<i class="logo center">
+    AgréVid
+</i>
 
 <ui-view></ui-view>
 
