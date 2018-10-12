@@ -1,5 +1,7 @@
 var myApp = angular.module('routeApp',['ui.router']);
 
+
+
 myApp.config(function($stateProvider){
 
     var homeState = {
@@ -17,8 +19,12 @@ myApp.config(function($stateProvider){
 
 
 
+
     $stateProvider.state(homeState);
     $stateProvider.state(page1State);
+
+
+
 
 
 });

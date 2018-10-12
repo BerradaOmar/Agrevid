@@ -5,6 +5,7 @@ var path = require('path');
 var app = require('express')();
 var express = require('express');
 
+
 var options = {
     key : fs.readFileSync('bin/SSL/server.key'),
     cert : fs.readFileSync('bin/SSL/server.crt'),
@@ -15,6 +16,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 
 
-https.createServer(options,app).listen(3000,function(req,res){
-    console.log("Started on port 3000");
+https.createServer(options,app).listen(8080,function(req,res){
+    console.log("Started on port 8080");
 });
+
+
