@@ -4,17 +4,56 @@ var https = require('https');
 var path = require('path');
 var app = require('express')();
 var express = require('express');
+var nodemailer = require('nodemailer');
 
+/*--------------------------------------------------------------------------------------------------------------------*/
+// certificat SSL
 var options = {
     key : fs.readFileSync('bin/SSL/server.key'),
     cert : fs.readFileSync('bin/SSL/server.crt'),
 };
 
+
+/*--------------------------------------------------------------------------------------------------------------------*/
 //dossier que le serveur utilise
 app.use(express.static(path.join(__dirname, '../public')));
 
 
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*Envoie email de récuperation de mot de passe*/
+app.post('/send-email-recuperation',function (req,res) {
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'agrevid@gmail.com',
+            pass: 'Agrevid.com'
+        }
+    });
 
+    var mailOptions = {
+        from: 'agrevid@gmail.com',
+        to: 'agrevid@gmail.com',
+        subject: 'Votre mot de passe temporaire',
+        text: 'Cher client,\n\n' +
+            'Votre mot de passe temporaire est le suivant :\n' +
+            'ilovenancy\n' +
+            'Veuillez modifier votre mot de passe le plutôt possible\n\n' +
+            'Cordialement,\n' +
+            'Agrévid Groupe'
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+            res.redirect('https://agrevid.com:3000');
+        }
+    });
+});
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+//Https Server Lunch
 https.createServer(options,app).listen(3000,function(req,res){
     console.log("Started on port 3000");
 });
