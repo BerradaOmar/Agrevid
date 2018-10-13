@@ -14,7 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.js"></script>
-    <script src="javascripts/AngularRouting.js"></script>
+    <script src="javascripts/app.js"></script>
 
 
 </head>
@@ -33,9 +33,6 @@
             data-target="#register-modal">
         Inscription
     </button>
-    <button type="button" class="btn btn-lg button-accueil" ui-sref="testRouting" ui-sref-active="active">
-        testRouting
-    </button>
 </div>
 
 
@@ -45,7 +42,7 @@
     <div class="modal-dialog">
         <div class="loginmodal-container">
             <h4 class="logoStyle">Connectez-vous</h4><br>
-            <form>
+            <form action="/se-connecter" method="post">
                 <input type="text" name="user" placeholder="Votre email">
                 <input type="password" name="pass" placeholder="Mot de passe">
                 <input type="submit" name="login" class="btn btn-lg button-accueil" value="Se connecter">
@@ -85,8 +82,6 @@
 <i class="logo center">
     AgréVid
 </i>
-
-<ui-view></ui-view>
 
 </body>
 

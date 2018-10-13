@@ -9,6 +9,11 @@ a {
 
 }
 
+.hideFromSight {
+  display:none;
+  visibility: hidden;
+}
+
 .center {
   position: absolute;
   left: 0;

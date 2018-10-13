@@ -5,12 +5,19 @@ var path = require('path');
 var app = require('express')();
 var express = require('express');
 var nodemailer = require('nodemailer');
+var bodyParser = require('body-parser');
+var dialog = require('dialog');
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+//parsing encoded data
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 // certificat SSL
 var options = {
-    key : fs.readFileSync('bin/SSL/server.key'),
-    cert : fs.readFileSync('bin/SSL/server.crt'),
+    key: fs.readFileSync('bin/SSL/server.key'),
+    cert: fs.readFileSync('bin/SSL/server.crt'),
 };
 
 
@@ -21,7 +28,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 /*Envoie email de récuperation de mot de passe*/
-app.post('/send-email-recuperation',function (req,res) {
+app.post('/send-email-recuperation', function (req, res) {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -42,7 +49,7 @@ app.post('/send-email-recuperation',function (req,res) {
             'Agrévid Groupe'
     };
 
-    transporter.sendMail(mailOptions, function(error, info){
+    transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error);
         } else {
@@ -51,9 +58,22 @@ app.post('/send-email-recuperation',function (req,res) {
         }
     });
 });
-
+/*--------------------------------------------------------------------------------------------------------------------*/
+//methode post de se connecter
+app.post('/se-connecter', function (req, res) {
+    if((req.body.user =="Omar") && (req.body.pass =="hamidjen")){
+        console.log(req.body);
+        res.redirect('accueil.html');
+    }
+    else{
+        dialog.warn('Votre identifiant ou mot de passe est incorrecte', function(exitCode){
+            if (exitCode == 0) console.log('User closed window');
+        });
+        res.redirect('https://agrevid.com:3000/');
+    }
+});
 /*--------------------------------------------------------------------------------------------------------------------*/
 //Https Server Lunch
-https.createServer(options,app).listen(3000,function(req,res){
+https.createServer(options, app).listen(3000, function (req, res) {
     console.log("Started on port 3000");
 });

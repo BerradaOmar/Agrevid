@@ -5,6 +5,8 @@ myApp.config(function($stateProvider){
     var homeState = {
         name : 'accueil',
         url : '/accueil',
+        controller : 'accueilController'
+
     };
 
 
@@ -27,5 +29,7 @@ myApp.config(function($stateProvider){
 /*Controllers*/
 
 myApp.controller("administrationController",["$scope",function ($scope) {
+}]);
 
+myApp.controller("accueilController",["$scope",function ($scope) {
 }]);
