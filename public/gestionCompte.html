@@ -1,10 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>gestion Compte</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
+
+
+<p> votre compte a bien été desactiver </p>
+<p> votre compte a bien été activer </p>
+
+<div class="container">
+
+    <form class="form-inline" action="/action_page.php">
+         <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Nom:</label>
+            <div class="col-sm-10">
+                <input readonly type="text" class="form-control" id="nom"  name="email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Email:</label>
+            <div class="col-sm-10">
+                <input readonly type="email" class="form-control" id="email"  name="email">
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+
+    <div class="container">
+        <h2>Historique</h2>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>vedio</th>
+                <th>source</th>
+                <th>date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>John</td>
+                <td>Youtube</td>
+                <td>11/12/2018</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Youtube</td>
+                <td>11/12/2018</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Youtube</td>
+                <td>11/12/2018</td>
+            </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <button type="button" onclick="fonctiondeDesacivationActivation()" class="btn btn-danger">Desactiver compte</button>
+    </div>
+
+
+
+
+
 
 </body>
 </html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div id="imaginary_container">
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control"  placeholder="Search" >
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div style="margin-left: 100px;">
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Créer un compte</button>
+            <button type="button" onclick="fonctiondeDesacivationActivation()" class="btn btn-danger">Desactiver compte</button>
+            </div>
+            </div>
+    </div>
+
+</div>
+
+</br></br>
+<div class="container" style="width: 50%">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">detail</div>
+        <div class="panel-body">
+            <div class="container" style="width:100%">
+
+                <form class="form-inline"  >
+                    <div class="form-group" >
+                        <label class="control-label col-sm-2" for="nom2">Nom:</label>
+                        <div class="col-sm-10">
+                            <input readonly type="text" class="form-control" id="nom2"  name="nom2">
+                        </div>
+                    </div>
+                    <br> <br>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email2">Email:</label>
+                        <div class="col-sm-10">
+                            <input readonly type="email" class="form-control" id="email2"  name="email2">
+                        </div>
+                    </div>
+                     <br>
+                    <br>
+                    <label class="control-label col-sm-2" >role :</label>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="remember" id="role1"> Admin</label>
+
+                        <label><input type="checkbox" name="remember" id="role2">Regular</label>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<div class="container" style="width: 50%">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Historique</div>
+        <div class="panel-body">
+            <div class="container" style="width:100%">
+
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>vedio</th>
+                        <th>source</th>
+                        <th>date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Youtube</td>
+                        <td>11/12/2018</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Youtube</td>
+                        <td>11/12/2018</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Youtube</td>
+                        <td>11/12/2018</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="width: 50%">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Logs</div>
+        <div class="panel-body">
+            <div class="container" style="width:100%">
+
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>consultation</th>
+                        <th>conexion</th>
+                        <th>deconexion</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Youtube</td>
+                        <td>11/12/2018</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Youtube</td>
+                        <td>11/12/2018</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Youtube</td>
+                        <td>11/12/2018</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="width:70%">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="nom" type="text" class="form-control" name="nom" placeholder="nom">
+                    </div>
+
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="password" type="password" class="form-control" name="password" placeholder="mot de pass">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="password2" type="password" class="form-control" name="password2" placeholder="confirmer mot de pass">
+                    </div>
+                    <br>
+                    <span class="label label-danger">Role d'utilisation</span>
+                    <br>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="remember"> Admin</label>
+
+                        <label><input type="checkbox" name="remember">Regular</label>
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Créer le compte</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
