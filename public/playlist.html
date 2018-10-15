@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StreamPlaylist</title>
+
+    <link rel="stylesheet" href="stylesheets/playlistStyle.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.js"></script>
+    <script src="javascripts/app.js"></script>
+
+</head>
+<body>
+<!-- Menu navigation boutons + Routing AngularJS  -->
+<div class="btn-group">
+    <button type="button" class="btn btn-lg button-accueil" ui-sref-active="active" data-toggle="modal"
+            data-target="#login-modal">
+        Connexion
+    </button>
+    <button type="button" class="btn btn-lg button-accueil" ui-sref-active="active" data-toggle="modal"
+            data-target="#register-modal">
+        Inscription
+    </button>
+</div>
+<div class="main">
+    <button type="button" onclick="fonctiondeDesacivationActivation()" class="btn btn-danger">Ajouter Playlist</button>
+    <h3>Playlist 1</h3>
+    <!-- THE PLAYLIST -->
+    <div class="vid-list-container">
+        <div class="vid-list">
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/eg6kNoJmzkY?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"></div>
+                <div class="desc">Jessica Hernandez & the Deltas - Dead Brains</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/_Tz7KROhuAw?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/_Tz7KROhuAw/0.jpg"></div>
+                <div class="desc">Barbatuques - CD Tum P&aacute; - Sambalel&ecirc;</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/F1f-gn_mG8M?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/F1f-gn_mG8M/0.jpg"></div>
+                <div class="desc">Eleanor Turner plays Baroque Flamenco</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/fB8UTheTR7s?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/fB8UTheTR7s/0.jpg"></div>
+                <div class="desc">Sleepy Man Banjo Boys: Bluegrass</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/0SNhAKyXtC8?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/0SNhAKyXtC8/0.jpg"></div>
+                <div class="desc">Edmar Castaneda: NPR Music Tiny Desk Concert</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/RTHI_uGyfTM?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/RTHI_uGyfTM/0.jpg"></div>
+                <div class="desc">Winter Harp performs Caravan</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/abQRt6p8T7g?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/abQRt6p8T7g/0.jpg"></div>
+                <div class="desc">The Avett Brothers Tiny Desk Concert</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/fpmN9JorFew?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/fpmN9JorFew/0.jpg"></div>
+                <div class="desc">Tracy Chapman - Give Me One Reason</div>
+            </div>
+        </div>
+    </div>
+    <!-- LEFT AND RIGHT ARROWS -->
+    <div class="arrows">
+        <div class="arrow-left"><</div>
+        <div class="arrow-right">></div>
+    </div>
+
+    <h3>Playlist 2</h3>
+    <!-- THE PLAYLIST -->
+    <div class="vid-list-container2">
+        <div class="vid-list">
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/eg6kNoJmzkY?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"></div>
+                <div class="desc">Jessica Hernandez & the Deltas - Dead Brains</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/_Tz7KROhuAw?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/_Tz7KROhuAw/0.jpg"></div>
+                <div class="desc">Barbatuques - CD Tum P&aacute; - Sambalel&ecirc;</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/F1f-gn_mG8M?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/F1f-gn_mG8M/0.jpg"></div>
+                <div class="desc">Eleanor Turner plays Baroque Flamenco</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/fB8UTheTR7s?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/fB8UTheTR7s/0.jpg"></div>
+                <div class="desc">Sleepy Man Banjo Boys: Bluegrass</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/0SNhAKyXtC8?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/0SNhAKyXtC8/0.jpg"></div>
+                <div class="desc">Edmar Castaneda: NPR Music Tiny Desk Concert</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/RTHI_uGyfTM?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/RTHI_uGyfTM/0.jpg"></div>
+                <div class="desc">Winter Harp performs Caravan</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/abQRt6p8T7g?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/abQRt6p8T7g/0.jpg"></div>
+                <div class="desc">The Avett Brothers Tiny Desk Concert</div>
+            </div>
+
+            <div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/fpmN9JorFew?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                <div class="thumb"><img src="http://img.youtube.com/vi/fpmN9JorFew/0.jpg"></div>
+                <div class="desc">Tracy Chapman - Give Me One Reason</div>
+            </div>
+        </div>
+    </div>
+    <!-- LEFT AND RIGHT ARROWS -->
+    <div class="arrows">
+        <div class="arrow-left2"><</div>
+        <div class="arrow-right2">></div>
+    </div>
+</div>
+
+<!-- JS FOR SCROLLING THE ROW OF THUMBNAILS -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".arrow-right").bind("click", function (event) {
+            event.preventDefault();
+            $(".vid-list-container").stop().animate({
+                scrollLeft: "+=336"
+            }, 750);
+        });
+        $(".arrow-left").bind("click", function (event) {
+            event.preventDefault();
+            $(".vid-list-container").stop().animate({
+                scrollLeft: "-=336"
+            }, 750);
+        });
+    });
+
+    $(document).ready(function () {
+        $(".arrow-right2").bind("click", function (event) {
+            event.preventDefault();
+            $(".vid-list-container2").stop().animate({
+                scrollLeft: "+=336"
+            }, 750);
+        });
+        $(".arrow-left2").bind("click", function (event) {
+            event.preventDefault();
+            $(".vid-list-container2").stop().animate({
+                scrollLeft: "-=336"
+            }, 750);
+        });
+    });
+</script>
+
+</body>
+</html>
